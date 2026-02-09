@@ -13,9 +13,19 @@ const SignInForm = ({ setFormData, dispatch, navigate }) => {
 
 
     const onFormSubmit = useCallback(
-        (e) => handleSignIn(e, dispatch, navigate),
+        async (e) => {
+            e.preventDefault();
+            try {
+
+                handleSignIn(e, dispatch, navigate);
+            } catch (error) {
+                console.error("Sign in failed:", error);
+
+            }
+        },
         [dispatch, navigate]
     );
+
 
     return (
         <Form className="signin-form" onSubmit={onFormSubmit}>

@@ -18,7 +18,7 @@ const SignIn = () => {
     <Container fluid className="vh-100 p-0 poppins-font">
       <Row className="h-100">
 
-        <Col md={6} className="d-flex flex-column justify-content-center px-3 px-md-5  signin-left">
+        <Col md={6} className="d-flex flex-column justify-content-center px-3 px-md-5 signin-left">
           <Stack direction="horizontal" gap={2}  >
             <Image src={mainLogo} width={40} height={40} />
             <Image src={taskmanTextLogo} height={28} />
@@ -32,7 +32,6 @@ const SignIn = () => {
         <SignInForm setFormData={setFormData} dispatch={dispatch} navigate={navigate}/>
         </Col>
 
-       
       <RightSideInBoth/>
 
       </Row>

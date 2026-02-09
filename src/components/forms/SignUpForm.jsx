@@ -13,9 +13,18 @@ const SignUpForm = ({ signUpData, setSignUpData, navigate }) => {
 
 
     const onFormSubmit = useCallback(
-        (e) => handleSignUp(e, signUpData, navigate),
+        (e) => {
+            e.preventDefault();
+            try {
+                handleSignUp(e, signUpData, navigate);
+            } catch (error) {
+                console.error("Sign up failed:", error);
+                alert("Sign up failed. Please check your details and try again.");
+            }
+        },
         [signUpData, navigate]
     );
+
 
     return (
         <Form

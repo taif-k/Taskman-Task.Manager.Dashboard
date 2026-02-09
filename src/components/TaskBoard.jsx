@@ -14,7 +14,6 @@ import greenCircle from "../assets/icons/centre-icons/green_circle_in_progres_ic
 import blueCircle from "../assets/icons/centre-icons/blue_done_icon.svg";
 import searchIcon from "../assets/icons/centre-icons/top_search_icon.svg";
 
-
 const toBase64 = (file) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -37,7 +36,6 @@ const TaskBoard = () => {
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasks.columns);
 
-
   const columns = useMemo(() => [
     { key: "newTask", title: "New Task", color: redCircle },
     { key: "inProgress", title: "In Progress", color: greenCircle },
@@ -54,68 +52,101 @@ const TaskBoard = () => {
 
   const sensors = useSensors(useSensor(PointerSensor));
 
-  // Memoized callbacks
   const handleDragEnd = useCallback((event) => {
-    const { active, over } = event;
-    if (!over) return;
+    try {
+      const { active, over } = event;
+      if (!over) return;
 
-    const activeId = String(active.id);
-    const overId = String(over.id);
+      const activeId = String(active.id);
+      const overId = String(over.id);
 
-    const fromColumn = Object.keys(tasks).find((col) =>
-      tasks[col].some((task) => String(task.id) === activeId)
-    );
-    if (!fromColumn) return;
+      const fromColumn = Object.keys(tasks).find((col) =>
+        tasks[col].some((task) => String(task.id) === activeId)
+      );
+      if (!fromColumn) return;
 
-    let toColumn = null;
-    if (overId.startsWith("empty-")) toColumn = overId.replace("empty-", "");
-    else toColumn = Object.keys(tasks).find((col) =>
-      tasks[col].some((task) => String(task.id) === overId)
-    );
-    if (!toColumn) return;
+      let toColumn = null;
+      if (overId.startsWith("empty-")) toColumn = overId.replace("empty-", "");
+      else toColumn = Object.keys(tasks).find((col) =>
+        tasks[col].some((task) => String(task.id) === overId)
+      );
+      if (!toColumn) return;
 
-    dispatch(moveTask({
-      fromColumn, toColumn,
-      activeId: Number(activeId),
-      overId: overId.startsWith("empty-") ? null : Number(overId),
-    }));
+      dispatch(moveTask({
+        fromColumn,
+        toColumn,
+        activeId: Number(activeId),
+        overId: overId.startsWith("empty-") ? null : Number(overId),
+      }));
+    } catch (error) {
+      console.log(error);
+    }
   }, [tasks, dispatch]);
 
   const handleOpenModal = useCallback((column, task = null) => {
-    if (task) setNewTaskData({ ...task, column }), setEditingTask(task);
-    else setNewTaskData({ column }), setEditingTask(null);
-    setShowModal(true);
+    try {
+      if (task) {
+        setNewTaskData({ ...task, column });
+        setEditingTask(task);
+      } else {
+        setNewTaskData({ column });
+        setEditingTask(null);
+      }
+      setShowModal(true);
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   const handleCloseModal = useCallback(() => {
-    setShowModal(false);
-    setEditingTask(null);
-    setNewTaskData({});
+    try {
+      setShowModal(false);
+      setEditingTask(null);
+      setNewTaskData({});
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   const handleChange = useCallback((e) => {
-    const { name, value, files } = e.target;
-    if (name === "image") {
-      const file = files[0];
-      if (!file) return;
-      toBase64(file).then((base64) =>
-        setNewTaskData((prev) => ({ ...prev, image: base64 }))
-      );
-    } else setNewTaskData((prev) => ({ ...prev, [name]: value }));
+    try {
+      const { name, value, files } = e.target;
+      if (name === "image") {
+        const file = files[0];
+        if (!file) return;
+        toBase64(file)
+          .then((base64) => setNewTaskData((prev) => ({ ...prev, image: base64 })))
+          .catch(console.log);
+      } else {
+        setNewTaskData((prev) => ({ ...prev, [name]: value }));
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   const handleSubmit = useCallback((e) => {
-    e.preventDefault();
-    const taskPayload = { ...newTaskData, id: Date.now(), progress: 0, image: newTaskData.image || null };
-    if (editingTask) {
-      dispatch(editTask({ column: newTaskData.column, taskId: editingTask.id, updates: taskPayload }));
-    } else {
-      dispatch(addTask({ column: newTaskData.column, task: taskPayload }));
+    try {
+      e.preventDefault();
+      const taskPayload = { ...newTaskData, id: Date.now(), progress: 0, image: newTaskData.image || null };
+      if (editingTask) {
+        dispatch(editTask({ column: newTaskData.column, taskId: editingTask.id, updates: taskPayload }));
+      } else {
+        dispatch(addTask({ column: newTaskData.column, task: taskPayload }));
+      }
+      handleCloseModal();
+    } catch (error) {
+      console.log(error);
     }
-    handleCloseModal();
   }, [newTaskData, editingTask, dispatch, handleCloseModal]);
 
-  const handleViewTask = useCallback((task) => setViewingTask(task), []);
+  const handleViewTask = useCallback((task) => {
+    try {
+      setViewingTask(task);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   return (
     <>

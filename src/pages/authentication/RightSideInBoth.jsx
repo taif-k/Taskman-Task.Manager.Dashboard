@@ -4,12 +4,7 @@ import { Col, Image, } from "react-bootstrap";
 const RightSideInBoth = () => {
     return (
         <Col md={6} className="right-side-both">
-            <Image
-                src={blankLogo}
-                className="illustration-logo"
-                alt="sun and mountain logo"
-            />
-
+            <Image src={blankLogo} className="illustration-logo" alt="sun and mountain logo"/>
             <h2>
                 Where <span className="light-brwn-underline">remote</span> teams
                 <br /> get work done
