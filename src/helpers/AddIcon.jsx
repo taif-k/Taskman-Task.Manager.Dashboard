@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const AddIcon = ({ color = "#1DA3AF" }) => (
   <svg
     width={12}
