@@ -4,9 +4,10 @@ margin: 0;
 box-sizing: border-box;
 }
 
-// html, body {
-//   overflow: hidden;
-// }
+
+html {
+  overflow-x: hidden;
+}
 
 .plus-icon-blu {
   filter: invert(28%) sepia(95%) saturate(4000%) hue-rotate(340deg);
