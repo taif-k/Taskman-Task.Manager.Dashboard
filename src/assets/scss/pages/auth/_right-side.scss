@@ -1,0 +1,101 @@
+.right-side-both {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  background-color: #0AB3C2;
+
+  .illustration-logo {
+    opacity: 0.6;
+  }
+
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 1.3125rem;
+    max-width: 25rem;
+
+    .light-brwn-underline {
+      text-decoration: underline;
+      text-decoration-color: #F2C94C;
+    }
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 5.9375rem;
+    max-width: 31.25rem;
+  }
+
+  @media (max-width: 1024px) {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 2rem;
+
+    h2 {
+      font-size: 2.25rem;
+      max-width: 22rem;
+    }
+
+    p {
+      max-width: 28rem;
+      margin-bottom: 4rem;
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 425px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 4rem;
+
+    h2 {
+      font-size: 1.75rem;
+      max-width: 20rem;
+    }
+
+    p {
+      max-width: 18rem;
+      margin-bottom: 3rem;
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (max-width: 375px) {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    margin-top: 2rem;
+
+    h2 {
+      font-size: 1.5rem;
+      max-width: 18rem;
+    }
+
+    p {
+      max-width: 16rem;
+      margin-bottom: 2.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    margin-top: 4rem;
+
+    h2 {
+      font-size: 1.25rem;
+      max-width: 15rem;
+    }
+
+    p {
+      max-width: 14rem;
+      margin-bottom: 2rem;
+      font-size: 0.85rem;
+    }
+  }
+}

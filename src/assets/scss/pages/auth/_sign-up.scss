@@ -1,0 +1,187 @@
+.sign-up-page {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+
+  .left-side {
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    height: 100%;
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+
+      img {
+        &.main-logo {
+          width: 40px;
+          height: 40px;
+        }
+
+        &.text-logo {
+          margin-left: 0.5rem;
+          height: 1.75rem;
+        }
+      }
+    }
+
+    .heading-section {
+      margin-bottom: 1.5rem;
+
+      h2 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+
+        .nowrap {
+          white-space: nowrap;
+        }
+
+        .neon-green {
+          color: $success;
+        }
+      }
+
+      .terms-text {
+        color: $diff-grey;
+        font-weight: 400;
+        max-width: 25rem;
+      }
+    }
+  }
+
+  .btn-neon-green {
+    background-color: $success !important;
+    border-color: $success !important;
+  }
+
+  .input-top-border {
+    border: none;
+    border-top: 2px solid $link-color-grey;
+    border-radius: 0;
+    padding-left: 0;
+  }
+
+  @media (max-width: 425px) {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+
+    .left-side {
+      width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .right-side-both {
+      margin-top: 4rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .btn-neon-green {
+      width: 100%;
+    }
+
+    .input-top-border {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .left-side {
+      margin-top: 3rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    .right-side-both {
+      margin-top: 2rem;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    .heading-section h2 {
+      font-size: 1.5rem;
+    }
+
+    .terms-text {
+      max-width: 20rem;
+      font-size: 0.9rem;
+    }
+
+    .btn-neon-green {
+      font-size: 0.95rem;
+      height: 2.75rem;
+    }
+
+    .input-top-border {
+      font-size: 0.95rem;
+      padding: 0.5rem 0.5rem;
+    }
+  }
+
+  @media (max-width: 320px) {
+    .left-side {
+      margin-top: 4rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .right-side-both {
+      margin-top: 4rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+
+    .heading-section h2 {
+      font-size: 1.25rem;
+    }
+
+    .terms-text {
+      max-width: 18rem;
+      font-size: 0.85rem;
+    }
+
+    .btn-neon-green {
+      font-size: 0.9rem;
+      height: 2.5rem;
+    }
+
+    .input-top-border {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.4rem;
+    }
+  }
+
+  @media (min-width: 426px) and (max-width: 1024px) {
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: row;
+
+    .left-side {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      margin-top: 2rem;
+    }
+
+    .right-side-both {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      margin-top: 2rem;
+    }
+
+    .btn-neon-green {
+      width: auto;
+    }
+
+    .input-top-border {
+      width: 100%;
+    }
+  }
+}

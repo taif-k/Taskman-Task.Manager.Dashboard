@@ -1,0 +1,25 @@
+@import "bootstrap/scss/functions";
+
+
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+
+
+@import "bootstrap/scss/bootstrap";
+@import "./variables";
+
+@import "./layouts/dashboard-layout";
+@import "./components/taskboard";
+@import "./layouts/rightside-layout";
+@import "./layouts//leftsidelayout-layout";
+@import "./components/button";
+@import "./pages/profile-page";
+@import "./pages/auth/sign-in";
+@import "./pages/auth/sign-up";
+@import "./pages/auth/right-side";
+@import "./components/singlecard";
+@import "./components/members";
+@import "./common";
+

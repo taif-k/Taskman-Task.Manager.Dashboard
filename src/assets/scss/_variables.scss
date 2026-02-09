@@ -1,0 +1,59 @@
+// Fonts
+$font-family-quicksand: 'Quicksand', sans-serif;
+$font-family-poppins: 'Poppins', sans-serif;
+$font-weight-bold: 600;
+
+// Colors
+$primary: #0AB3C2;
+$secondary: #00D2E5;
+$success: #0AC20A;
+$info: #F36ED6;
+$warning: #F39E6E;
+$danger: #A56EF3;
+$light: #1DA3AF;
+$dark: #6EC3F3;
+$primary-bg-subtle: #E2E4E9;
+
+// Link
+$link-color-red: red;
+$link-color-black: black;
+$link-color-grey: #cecece;
+
+
+$sm: 33.75rem;  // 540 / 16
+$md: 45rem;      // 720 / 16
+$lg: 60rem;      // 960 / 16
+$xl: 71.25rem;   // 1140 / 16
+$xxl: 87rem;     // 1392 / 16
+
+$container-max-widths: (
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xl: $xl,
+  xxl: $xxl
+);
+
+
+$spacing-sm: 0.5rem;  
+$spacing-md: 1rem;     
+$spacing-lg: 1.5rem;   
+
+// Buttons
+$btn-primary-color: $primary;
+$btn-hover-darken: 10%;
+
+// Typography
+$headings-font-weight: 600 !default;
+$headings-color: #363B45;
+
+// Font sizes for headings
+$fs-h2: 2.25rem;       // 36 / 16
+$lh-h2: 1;
+$letter-spacing-h2: 0;
+
+
+$w-h2: 25rem;          
+$h-h2: 6.75rem;     
+
+$diff-grey: #7c7c7c;

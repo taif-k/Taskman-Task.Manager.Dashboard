@@ -1,0 +1,25 @@
+@import "./../variables";
+
+
+$font-family-base: 'Poppins', sans-serif;
+
+
+.quicksand-font {
+  font-family: $font-family-quicksand
+}
+
+.poppins-font {
+  font-family: $font-family-poppins
+}
+
+.invisible-scroll{
+  scrollbar-width: none;   
+}
+
+.outlet-container {
+  background-color: $primary-bg-subtle;
+  min-height: 100vh;
+  padding: $spacer;
+     
+}
+
