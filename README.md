@@ -2,6 +2,9 @@
 
 A React-based **Task Manager / Kanban Board** application built with **Vite**, **React-Bootstrap**, **Redux Toolkit**, and **@dnd-kit** for drag-and-drop functionality. Users can create, edit, move, and delete tasks across multiple columns, with support for images, comments, and labels.
 
+## Live Demo
+Check out the app live on Netlify: [Task Manager App](https://my-task-manager.netlifyapp)
+
 ## Features
 
 ### Authentication Forms
