@@ -1,5 +1,9 @@
 @import "./../variables";
 
+.dropdown-toggle::after {
+  display: none !important;  
+}
+
 .task-board {
   h6 {
     margin-bottom: $spacing-md;
