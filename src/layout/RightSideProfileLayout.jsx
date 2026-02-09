@@ -9,7 +9,7 @@ import Stack from "react-bootstrap/Stack";
 
 import Image from "react-bootstrap/Image";
 import Accordion from "react-bootstrap/Accordion";
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, Nav, Row } from "react-bootstrap";
 import { NavLink, useNavigate } from "react-router-dom";
 
 import RecentActivity from "../components/RecentActivity";
@@ -43,56 +43,56 @@ const RightSideProfileLayout = () => {
   return (
     <>
 
-<Accordion defaultActiveKey={["1"]} alwaysOpen>
-  <Accordion.Item eventKey="0" className="bg-white">
-    <Accordion.Header className="mt-3">
-      <Image
-        src={currentUser?.avatar || avatarImg}
-        roundedCircle
-        width={50}
-        height={50}
-        className="me-2"
-      />
+      <Accordion defaultActiveKey={["1"]} alwaysOpen>
+        <Accordion.Item eventKey="0" className="bg-white">
+          <Accordion.Header className="mt-3">
+            <Image
+              src={currentUser?.avatar || avatarImg}
+              roundedCircle
+              width={50}
+              height={50}
+              className="me-2"
+            />
 
-      <Stack className="text-start">
-        <span className="fw-semibold">
-          {currentUser?.fullName || "User"}
-        </span>
-        <span className="text-muted small">
-          {currentUser?.email || ""}
-        </span>
-      </Stack>
-    </Accordion.Header>
+            <Stack className="text-start">
+              <span className="fw-semibold">
+                {currentUser?.fullName || "User"}
+              </span>
+              <span className="text-muted small">
+                {currentUser?.email || ""}
+              </span>
+            </Stack>
+          </Accordion.Header>
 
-    <Accordion.Body className="p-2">
-      <Stack gap={2}>
-        <NavLink
-          to="/profile"
-          className="text-decoration-none text-dark fw-semibold"
-        >
-          View Profile
-        </NavLink>
+          <Accordion.Body className="p-2">
+            <Stack gap={2}>
+              <NavLink
+                to="/profile"
+                className="text-decoration-none text-dark fw-semibold"
+              >
+                View Profile
+              </NavLink>
 
-        <span
-          onClick={handleLogout}
-          className="text-danger fw-semibold cursor-pointer"
-        >
-          Logout
-        </span>
-      </Stack>
-    </Accordion.Body>
-  </Accordion.Item>
-</Accordion>
+              <span
+                onClick={handleLogout}
+                className="text-danger fw-semibold cursor-pointer"
+              >
+                Logout
+              </span>
+            </Stack>
+          </Accordion.Body>
+        </Accordion.Item>
+      </Accordion>
 
 
       <Container>
         <div style={{ marginTop: "24px" }} >
-          <Members/>
+          <Members />
         </div>
 
 
-        <Row className="mt-3" style={{marginTop: "37px"}}>
-          <Col className="small text-muted mb-1 fw-semibold" style={{ fontSize: "18px"}}>Recent Activity</Col>
+        <Row className="mt-3" style={{ marginTop: "37px" }}>
+          <Col className="small text-muted mb-1 fw-semibold" style={{ fontSize: "18px" }}>Recent Activity</Col>
           <Col className="d-flex flex-column align-items-end pe-3">
             <Image src={recentActivityIcon} width={20} height={20} />
           </Col>
@@ -105,9 +105,9 @@ const RightSideProfileLayout = () => {
         <Row className="align-items-center mt-3">
           <Col className="d-flex align-items-center gap-2">
             <Image src={redTrashIcon} width={20} height={20} />
-            <a href="#" className="text-danger text-decoration-none">
+            <Nav.Link as={NavLink} to="/archived" className="text-danger" disabled>
               Archived Items
-            </a>
+            </Nav.Link>
           </Col>
           <Col
             xs="auto"
