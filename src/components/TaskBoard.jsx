@@ -170,7 +170,7 @@ const TaskBoard = () => {
         </Dropdown>
 
         <Dropdown>
-          <Dropdown.Toggle variant="primary" bsPrefix=" ">
+          <Dropdown.Toggle  variant="primary">
             Create <AddIcon color="#fafcfc" />
           </Dropdown.Toggle>
           <Dropdown.Menu>
