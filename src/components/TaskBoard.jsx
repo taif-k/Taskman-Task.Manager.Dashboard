@@ -170,7 +170,7 @@ const TaskBoard = () => {
         </Dropdown>
 
         <Dropdown>
-          <Dropdown.Toggle  variant="primary">
+          <Dropdown.Toggle variant="primary">
             Create <AddIcon color="#fafcfc" />
           </Dropdown.Toggle>
           <Dropdown.Menu>
@@ -226,8 +226,90 @@ const TaskBoard = () => {
         </Modal.Header>
         <Modal.Body>
           <Form onSubmit={handleSubmit}>
-           
+
+            <Form.Group className="mb-3">
+              <Form.Label>Task Name</Form.Label>
+              <Form.Control
+                type="text"
+                name="name"
+                value={newTaskData.name || ""}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Description</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={3}
+                name="description"
+                value={newTaskData.description || ""}
+                onChange={handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Start Date</Form.Label>
+              <Form.Control
+                type="date"
+                name="startDate"
+                value={newTaskData.startDate || ""}
+                onChange={handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>End Date</Form.Label>
+              <Form.Control
+                type="date"
+                name="endDate"
+                value={newTaskData.endDate || ""}
+                onChange={handleChange}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Label</Form.Label>
+              <Form.Select
+                name="label"
+                value={newTaskData.label || ""}
+                onChange={handleChange}
+              >
+                <option value="">Select label</option>
+                {LABELS.map((lbl) => (
+                  <option key={lbl.value} value={lbl.value}>{lbl.value}</option>
+                ))}
+              </Form.Select>
+            </Form.Group>
+
+
+            <Form.Group className="mb-3">
+              <Form.Label>Task Image</Form.Label>
+              <Form.Control
+                type="file"
+                name="image"
+                accept="image/*"
+                onChange={handleChange}
+              />
+
+              {newTaskData.image && (
+                <div className="mt-2">
+                  <img
+                    src={newTaskData.image}
+                    alt="preview"
+                    style={{ maxWidth: "100%", maxHeight: "150px", borderRadius: "4px" }}
+                  />
+                </div>
+              )}
+            </Form.Group>
+
+
+            <Button type="submit" variant="primary">
+              {editingTask ? "Save Task" : "Add Task"}
+            </Button>
           </Form>
+
         </Modal.Body>
       </Modal>
 
