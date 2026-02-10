@@ -66,13 +66,14 @@ const SignInForm = ({ setFormData, dispatch, navigate }) => {
 
             <Button
                 type="submit"
+                variant="sucess"
                 className="login-btn login-clr-bg"
                 style={{ marginBlock: "41px 54px" }}
             >
                 Login
             </Button>
 
-            <div className="signup-text ">
+            <div className="signup-text">
                 Don’t have an account?{" "}
                 <NavLink to="/auth/sign-up" className="neon-green">
                     Sign Up
