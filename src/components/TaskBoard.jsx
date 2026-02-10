@@ -150,14 +150,14 @@ const TaskBoard = () => {
     }
   }, []);
 
-  
-React.useEffect(() => {
-  setInfoMessage("Make new card to Move/Edit/Delete");
-  const timer = setTimeout(() => {
-    setInfoMessage("");
-  }, 1000);
-  return () => clearTimeout(timer);
-}, []);
+
+  React.useEffect(() => {
+    setInfoMessage("Make new card to Move/Edit/Delete");
+    const timer = setTimeout(() => {
+      setInfoMessage("");
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
 
 
@@ -172,9 +172,14 @@ React.useEffect(() => {
         </InputGroup>
 
         <Dropdown>
-          <Dropdown.Toggle variant="link" className="fw-semibold board-toggle p-1">
-            Jump to : <span>Choose Board</span>
+          <Dropdown.Toggle variant="link" className="board-toggle p-1">
+            <span style={{ color: "#5E6778" }}>Jump to :</span>{" "}
+            <span className="text-underline-bold">
+              Choose Board
+            </span>
           </Dropdown.Toggle>
+
+
           <Dropdown.Menu>
             <Dropdown.Item>News Task</Dropdown.Item>
             <Dropdown.Item>In Progress</Dropdown.Item>

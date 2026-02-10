@@ -14,35 +14,62 @@ const ActivityRow = React.memo(({ act, COLUMN_LABELS }) => {
             return (
               <>
                 added card{" "}
-                <span style={{ textDecoration: "underline" }}>{act.taskName}</span> to board{" "}
-                <span className="fw-semibold text-dark">{COLUMN_LABELS[act.column]}</span>
+                <span style={{ textDecoration: "underline" }}>
+                  {act.taskName}
+                </span>{" "}
+                to board{" "}
+                <span style={{ fontWeight: 700, color: "#000" }}>
+                  {COLUMN_LABELS[act.column]}
+                </span>
               </>
             );
+
           case "edit":
             return (
               <>
                 edited card{" "}
-                <span style={{ textDecoration: "underline" }}>{act.taskName}</span> in{" "}
-                <span className="fw-semibold text-dark">{COLUMN_LABELS[act.column]}</span>
+                <span style={{ textDecoration: "underline" }}>
+                  {act.taskName}
+                </span>{" "}
+                in{" "}
+                <span style={{ fontWeight: 700, color: "#000" }}>
+                  {COLUMN_LABELS[act.column]}
+                </span>
               </>
             );
+
           case "delete":
             return (
               <>
                 deleted card{" "}
-                <span style={{ textDecoration: "underline" }}>{act.taskName}</span> from{" "}
-                <span className="fw-semibold text-dark">{COLUMN_LABELS[act.column]}</span>
+                <span style={{ textDecoration: "underline" }}>
+                  {act.taskName}
+                </span>{" "}
+                from{" "}
+                <span style={{ fontWeight: 700, color: "#000" }}>
+                  {COLUMN_LABELS[act.column]}
+                </span>
               </>
             );
+
           case "move":
             return (
               <>
                 moved card{" "}
-                <span style={{ textDecoration: "underline" }}>{act.taskName}</span> from{" "}
-                <span className="fw-semibold text-dark">{COLUMN_LABELS[act.fromColumn]}</span> to{" "}
-                <span className="fw-semibold text-dark">{COLUMN_LABELS[act.toColumn]}</span>
+                <span style={{ textDecoration: "underline" }}>
+                  {act.taskName}
+                </span>{" "}
+                from{" "}
+                <span style={{ fontWeight: 700, color: "#000" }}>
+                  {COLUMN_LABELS[act.fromColumn]}
+                </span>{" "}
+                to{" "}
+                <span style={{ fontWeight: 700, color: "#000" }}>
+                  {COLUMN_LABELS[act.toColumn]}
+                </span>
               </>
             );
+
           default:
             return null;
         }
@@ -61,12 +88,20 @@ const ActivityRow = React.memo(({ act, COLUMN_LABELS }) => {
         <Col xs="auto">
           <Image src={avatarImg} roundedCircle width={30} height={30} />
         </Col>
+
         <Col>
           <div>
             <strong>{act.user?.name}</strong> {getActionText(act)}
           </div>
 
-          {act.image && <Image src={act.image} width={150} height={100} className="img-card" />}
+          {act.image && (
+            <Image
+              src={act.image}
+              width={150}
+              height={100}
+              className="img-card"
+            />
+          )}
 
           <div className="d-flex align-items-center gap-2 mt-1">
             <Image src={clockIcon} width={14} height={14} />
@@ -120,7 +155,13 @@ const RecentActivity = () => {
     <>
       {recentActivity.map((act, index) => {
         try {
-          return <ActivityRow key={index} act={act} COLUMN_LABELS={COLUMN_LABELS} />;
+          return (
+            <ActivityRow
+              key={index}
+              act={act}
+              COLUMN_LABELS={COLUMN_LABELS}
+            />
+          );
         } catch (error) {
           console.log(error);
           return null;

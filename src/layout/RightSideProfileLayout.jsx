@@ -45,24 +45,25 @@ const RightSideProfileLayout = () => {
 
       <Accordion defaultActiveKey={["1"]} alwaysOpen>
         <Accordion.Item eventKey="0" className="bg-white">
-          <Accordion.Header className="mt-3">
-            <Image
-              src={currentUser?.avatar || avatarImg}
-              roundedCircle
-              width={50}
-              height={50}
-              className="me-2"
-            />
+<Accordion.Header className="mt-3 accordion-header-border">
+  <Image
+    src={currentUser?.avatar || avatarImg}
+    roundedCircle
+    width={50}
+    height={50}
+    className="me-2"
+  />
 
-            <Stack className="text-start">
-              <span className="fw-semibold">
-                {currentUser?.fullName || "User"}
-              </span>
-              <span className="text-muted small">
-                {currentUser?.email || ""}
-              </span>
-            </Stack>
-          </Accordion.Header>
+  <Stack className="text-start">
+    <span className="fw-semibold">
+      {currentUser?.fullName || "User"}
+    </span>
+    <span className="text-muted small">
+      {currentUser?.email || ""}
+    </span>
+  </Stack>
+</Accordion.Header>
+
 
           <Accordion.Body className="p-2">
             <Stack gap={2}>
@@ -92,7 +93,17 @@ const RightSideProfileLayout = () => {
 
 
         <Row className="mt-3" style={{ marginTop: "37px" }}>
-          <Col className="small text-muted mb-1 fw-semibold" style={{ fontSize: "18px" }}>Recent Activity</Col>
+        <Col
+  className="mb-1"
+  style={{
+    fontSize: "18px",
+    fontWeight: 600,
+    color: "#363B45",
+  }}
+>
+  Recent Activity
+</Col>
+          {/* <Col className="small text-muted mb-1 fw-semibold" style={{ fontSize: "18px" }}>Recent Activity</Col> */}
           <Col className="d-flex flex-column align-items-end pe-3">
             <Image src={recentActivityIcon} width={20} height={20} />
           </Col>
