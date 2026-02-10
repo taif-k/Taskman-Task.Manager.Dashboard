@@ -26,7 +26,7 @@ const LeftSideLayout = () => {
   };
 
   return (
-    <Col md={1} xs={12}>
+    <Col md={1} xs={12} className="left-side-col" >
       <Nav className="flex-column">
         <Nav.Link as={NavLink} to="/" className="mt-5">
           <img src={mainLogo} alt="Home" />
