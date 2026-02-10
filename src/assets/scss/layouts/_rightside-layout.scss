@@ -1,42 +1,29 @@
-// underline
-.info-row {
-  border-bottom: 1px solid #dee2e6;
-  padding-bottom: 10px;
-}
+@import "../variables";
 
+.right-side-both {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  padding: $space-2xl;
+  background-color: $primary;
 
-.img-card {
-  object-fit: cover;
-  border-radius: 4px;
-  margin-top: 0.25rem;
-}
+  h2 {
+    text-align: center;
+    font-weight: 700;
+    font-size: $fs-3xl;
+    max-width: $w-h2;
 
+    .light-brwn-underline {
+      text-decoration: underline;
+      text-decoration-color: $underline-yellow;
+    }
+  }
 
-.right-layout-bg .accordion-button {
-  background-color: #ffffff; /* white background */
-  color: #000;               /* text color */
-}
-
-.right-layout-bg .accordion-button:not(.collapsed) {
-  background-color: #ffffff; /* stays white when open */
-  color: #000;               /* text color */
-  box-shadow: none;          /* remove default blue shadow */
-}
-
-/* Remove all borders from accordion item */
-.accordion-item {
-  border: 0;
-}
-
-/* Header button */
-.accordion-button {
-  border: 0;
-  border-bottom: 1px solid #dee2e6; /* only bottom border */
-  background-color: #fff;
-}
-
-/* Keep it white when open */
-.accordion-button:not(.collapsed) {
-  background-color: #fff;
-  box-shadow: none;
+  p {
+    text-align: center;
+    max-width: 31.25rem;
+    margin-bottom: 5.9375rem;
+  }
 }

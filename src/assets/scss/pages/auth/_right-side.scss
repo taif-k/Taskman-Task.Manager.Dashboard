@@ -3,10 +3,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  background-color: $primary;
   padding-left: 3rem;
   padding-right: 3rem;
-  background-color: #0AB3C2;
+
+  h2,
+  p {
+    color: $white;
+  }
 
   .illustration-logo {
     opacity: 0.6;
@@ -21,7 +25,8 @@
 
     .light-brwn-underline {
       text-decoration: underline;
-      text-decoration-color: #F2C94C;
+      text-decoration-color: $underline-yellow;
+      color: $white;
     }
   }
 

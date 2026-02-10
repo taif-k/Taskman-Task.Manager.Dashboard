@@ -1,41 +1,43 @@
+@import "./../../variables";
+
 .sign-up-page {
   height: 100vh;
-  font-family: "Poppins", sans-serif;
+  font-family: $font-family-poppins;
 
   .left-side {
     background-color: $white;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: $space-2xl;
+    padding-right: $space-2xl;
     height: 100%;
 
     .logo-row {
       display: flex;
       align-items: center;
-      margin-bottom: 1rem;
+      margin-bottom: $space-md;
 
       img {
         &.main-logo {
-          width: 40px;
-          height: 40px;
+          width: 2.5rem;  // 40px
+          height: 2.5rem;
         }
 
         &.text-logo {
-          margin-left: 0.5rem;
+          margin-left: $space-sm;
           height: 1.75rem;
         }
       }
     }
 
     .heading-section {
-      margin-bottom: 1.5rem;
+      margin-bottom: $space-lg;
 
       h2 {
         font-weight: 700;
         line-height: 1.2;
-        margin-bottom: 0.5rem;
+        margin-bottom: $space-sm;
 
         .nowrap {
           white-space: nowrap;
@@ -47,7 +49,7 @@
       }
 
       .terms-text {
-        color: $diff-grey;
+        color: $grey-500;
         font-weight: 400;
         max-width: 25rem;
       }
@@ -66,21 +68,22 @@
     padding-left: 0;
   }
 
-  @media (max-width: 425px) {
+
+  @media (max-width: $bp-sm) {
     display: flex;
     flex-direction: column;
-    margin-top: 3rem;
+    margin-top: $space-2xl;
 
     .left-side {
       width: 100%;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-left: $space-md;
+      padding-right: $space-md;
     }
 
     .right-side-both {
-      margin-top: 4rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      margin-top: $space-3xl;
+      padding-left: $space-md;
+      padding-right: $space-md;
     }
 
     .btn-neon-green {
@@ -92,26 +95,26 @@
     }
   }
 
-  @media (max-width: 375px) {
+  @media (max-width: $bp-xs) {
     .left-side {
-      margin-top: 3rem;
+      margin-top: $space-2xl;
       padding-left: 0.75rem;
       padding-right: 0.75rem;
     }
 
     .right-side-both {
-      margin-top: 2rem;
+      margin-top: $space-xl;
       padding-left: 0.75rem;
       padding-right: 0.75rem;
     }
 
     .heading-section h2 {
-      font-size: 1.5rem;
+      font-size: $fs-xl;
     }
 
     .terms-text {
       max-width: 20rem;
-      font-size: 0.9rem;
+      font-size: $fs-sm;
     }
 
     .btn-neon-green {
@@ -121,21 +124,21 @@
 
     .input-top-border {
       font-size: 0.95rem;
-      padding: 0.5rem 0.5rem;
+      padding: $space-sm;
     }
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: $bp-xxs) {
     .left-side {
-      margin-top: 4rem;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
+      margin-top: $space-3xl;
+      padding-left: $space-sm;
+      padding-right: $space-sm;
     }
 
     .right-side-both {
-      margin-top: 4rem;
-      padding-left: 0.5rem;
-      padding-right: 0.5rem;
+      margin-top: $space-3xl;
+      padding-left: $space-sm;
+      padding-right: $space-sm;
     }
 
     .heading-section h2 {
@@ -154,26 +157,28 @@
 
     .input-top-border {
       font-size: 0.9rem;
-      padding: 0.4rem 0.4rem;
+      padding: 0.4rem;
     }
   }
 
-  @media (min-width: 426px) and (max-width: 1024px) {
+
+
+  @media (min-width: 426px) and (max-width: $bp-lg) {
     height: auto;
     min-height: 100vh;
     display: flex;
     flex-direction: row;
 
     .left-side {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      margin-top: 2rem;
+      padding-left: $space-xl;
+      padding-right: $space-xl;
+      margin-top: $space-xl;
     }
 
     .right-side-both {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      margin-top: 2rem;
+      padding-left: $space-xl;
+      padding-right: $space-xl;
+      margin-top: $space-xl;
     }
 
     .btn-neon-green {

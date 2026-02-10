@@ -1,25 +1,33 @@
+// 1️⃣ Bootstrap core (required)
 @import "bootstrap/scss/functions";
 
+// 2️⃣ Your variables (override Bootstrap here)
+@import "./variables";
 
-
+// 3️⃣ Bootstrap variable system
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/maps";
 @import "bootstrap/scss/mixins";
 
-
+// 4️⃣ Bootstrap full framework
 @import "bootstrap/scss/bootstrap";
-@import "./variables";
 
+// 5️⃣ Your base / common styles
+@import "./common";
+
+// 6️⃣ Layouts
 @import "./layouts/dashboard-layout";
-@import "./components/taskboard";
+@import "./layouts/leftsidelayout-layout";
 @import "./layouts/rightside-layout";
-@import "./layouts//leftsidelayout-layout";
+
+// 7️⃣ Components
 @import "./components/button";
+@import "./components/taskboard";
+@import "./components/singlecard";
+@import "./components/members";
+
+// 8️⃣ Pages
 @import "./pages/profile-page";
 @import "./pages/auth/sign-in";
 @import "./pages/auth/sign-up";
 @import "./pages/auth/right-side";
-@import "./components/singlecard";
-@import "./components/members";
-@import "./common";
-

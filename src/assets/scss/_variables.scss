@@ -1,7 +1,9 @@
+
 // Fonts
 $font-family-quicksand: 'Quicksand', sans-serif;
 $font-family-poppins: 'Poppins', sans-serif;
 $font-weight-bold: 600;
+
 
 // Colors
 $primary: #0AB3C2;
@@ -12,48 +14,82 @@ $warning: #F39E6E;
 $danger: #A56EF3;
 $light: #1DA3AF;
 $dark: #6EC3F3;
-$primary-bg-subtle: #E2E4E9;
 
-// Link
+$white: #ffffff;
+$black: #000000;
+
+$grey-100: #f8f9fa;
+$grey-200: #e9ecef;
+$grey-300: #dee2e6;
+$grey-400: #cecece;
+$grey-500: #7c7c7c;
+$grey-600: #6c757d;
+$grey-700: #363B45;
+
+$primary-bg-subtle: #E2E4E9;
+$underline-yellow: #F2C94C;
+
+
+// Links
 $link-color-red: red;
 $link-color-black: black;
-$link-color-grey: #cecece;
+$link-color-grey: $grey-400;
 
 
-$sm: 33.75rem;  // 540 / 16
-$md: 45rem;      // 720 / 16
-$lg: 60rem;      // 960 / 16
-$xl: 71.25rem;   // 1140 / 16
-$xxl: 87rem;     // 1392 / 16
-
-$container-max-widths: (
-  sm: $sm,
-  md: $md,
-  lg: $lg,
-  xl: $xl,
-  xxl: $xxl
-);
+// Breakpoints
+$bp-xxs: 320px;
+$bp-xs: 375px;
+$bp-sm: 425px;
+$bp-md: 768px;
+$bp-lg: 1024px;
 
 
-$spacing-sm: 0.5rem;  
-$spacing-md: 1rem;     
-$spacing-lg: 1.5rem;   
+// Spacing
+$space-xxs: 0.25rem;
+$space-xs: 0.375rem;
+$space-sm: 0.5rem;
+$space-md: 1rem;
+$space-lg: 1.5rem;
+$space-xl: 2rem;
+$space-2xl: 3rem;
+$space-3xl: 4rem;
+
+
+// Font Sizes
+$fs-xs: 0.8125rem;
+$fs-sm: 0.875rem;
+$fs-md: 1rem;
+$fs-lg: 1.125rem;
+$fs-xl: 1.5rem;
+$fs-2xl: 2.25rem;
+$fs-3xl: 3rem;
+
+// Border Radius
+$radius-sm: 0.25rem;
+$radius-md: 0.375rem;
+
+
+// Sizes
+$img-sm-w: 9.375rem;
+$img-sm-h: 6.25rem;
+$img-md-w: 18.75rem;
+$img-md-h: 12.5rem;
+
+$icon-sm: 0.875rem;
+
+
+// Transitions
+$transition-fast: 0.2s ease-in-out;
+$transition-base: 0.3s ease-in-out;
 
 // Buttons
 $btn-primary-color: $primary;
 $btn-hover-darken: 10%;
 
-// Typography
-$headings-font-weight: 600 !default;
-$headings-color: #363B45;
 
-// Font sizes for headings
-$fs-h2: 2.25rem;       // 36 / 16
-$lh-h2: 1;
-$letter-spacing-h2: 0;
+// Headings
+$headings-font-weight: 600;
+$headings-color: $grey-700;
 
-
-$w-h2: 25rem;          
-$h-h2: 6.75rem;     
-
-$diff-grey: #7c7c7c;
+$w-h2: 25rem;
+$h-h2: 6.75rem;
