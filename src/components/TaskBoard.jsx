@@ -9,6 +9,7 @@ import CardDetailModal from "./CardDetailModal";
 import { addTask, editTask, moveTask } from "../store/slices/tasksSlice";
 import { AddIcon } from '../helpers/AddIcon';
 
+
 import redCircle from "../assets/icons/centre-icons/red_circle_new_task_icon.svg";
 import greenCircle from "../assets/icons/centre-icons/green_circle_in_progres_icon.svg";
 import blueCircle from "../assets/icons/centre-icons/blue_done_icon.svg";
@@ -32,6 +33,7 @@ const TaskBoard = () => {
   const [editingTask, setEditingTask] = useState(null);
   const [newTaskData, setNewTaskData] = useState({});
   const [viewingTask, setViewingTask] = useState(null);
+  const [infoMessage, setInfoMessage] = useState("");
 
   const dispatch = useDispatch();
   const tasks = useSelector((state) => state.tasks.columns);
@@ -148,6 +150,17 @@ const TaskBoard = () => {
     }
   }, []);
 
+  
+React.useEffect(() => {
+  setInfoMessage("Make new card to Move/Edit/Delete");
+  const timer = setTimeout(() => {
+    setInfoMessage("");
+  }, 1000);
+  return () => clearTimeout(timer);
+}, []);
+
+
+
   return (
     <>
       <Container className="d-flex align-items-center justify-content-between gap-2 mt-5">
@@ -184,7 +197,11 @@ const TaskBoard = () => {
       </Container>
 
       <h3 className="m-3 p-2">Task Manager</h3>
-
+      {infoMessage && (
+        <div className="alert  text-center">
+          {infoMessage}
+        </div>
+      )}
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <Container className="task-board">
           <Row>
