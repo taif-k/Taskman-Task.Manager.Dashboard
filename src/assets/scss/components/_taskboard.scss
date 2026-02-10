@@ -4,6 +4,12 @@
   display: none !important;
 }
 
+.text-underline-bold {
+  color: $black;
+  font-weight: $font-weight-bold;
+  text-decoration: underline;
+}
+
 .task-board {
   h6 {
     margin-bottom: $space-md;
