@@ -16,7 +16,7 @@ export const handleSignIn = async (e, dispatch, navigate) => {
   const { email, password, remember } = e.target;
 
   try {
-    const response = await fetch("http://localhost:5000/api/auth/login", {
+    const response = await fetch("https://taskman-api.onrender.com/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export const handleSignUp = async (e, signUpData, navigate) => {
   }
 
   try {
-    const response = await fetch("http://localhost:5000/api/auth/signup", {
+    const response = await fetch("https://taskman-api.onrender.com/api/auth/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
