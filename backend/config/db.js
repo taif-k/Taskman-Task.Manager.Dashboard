@@ -10,3 +10,10 @@ const connectDB = async () => {
 };
 
 module.exports = connectDB;
+
+
+/* order to check for debugging when working with render , netlify and mongodb
+Backend URL in browser
+Backend API in Postman
+Frontend calling backend
+*/ 
