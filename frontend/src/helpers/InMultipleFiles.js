@@ -1,5 +1,6 @@
 import { setTasksForUser } from "../store/slices/tasksSlice";
 
+const API_URL = "https://taskman-api-0nvd.onrender.com/api";
 
 // onChange
 export const handleInputChange = (e, setState) => {
@@ -16,7 +17,7 @@ export const handleSignIn = async (e, dispatch, navigate) => {
   const { email, password, remember } = e.target;
 
   try {
-    const response = await fetch("https://taskman-api-0nvd.onrender.com/api/auth/login", {
+    const response = await fetch(`${API_URL}/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -35,6 +36,7 @@ export const handleSignIn = async (e, dispatch, navigate) => {
     }
 
     const user = data.user;
+    const token = data.token;
     const key = user.email;
 
     const columns =
@@ -49,8 +51,10 @@ export const handleSignIn = async (e, dispatch, navigate) => {
 
     if (remember.checked) {
       localStorage.setItem("currentUser", JSON.stringify(user));
+      localStorage.setItem("token", token);
     } else {
       sessionStorage.setItem("currentUser", JSON.stringify(user));
+      sessionStorage.setItem("token", token);
     }
 
     dispatch(setTasksForUser({ columns, recentActivity }));
@@ -77,7 +81,7 @@ export const handleSignUp = async (e, signUpData, navigate) => {
   }
 
   try {
-    const response = await fetch("https://taskman-api-0nvd.onrender.com/api/auth/signup", {
+    const response = await fetch(`${API_URL}auth/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
